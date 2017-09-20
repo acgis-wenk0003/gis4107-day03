@@ -11,11 +11,13 @@
 
 #convert miles to kilometres
 def miles_to_km(miles):
+    """Input Miles"""
     km= miles*1.6
     return km
 
 #convert km per hour to metres per second
 def kmPerHr_to_mPerSec(kmph):
+    """Input Kilometres per hour"""
     m_per_sec= kmph*0.277
     return m_per_sec
 
@@ -41,8 +43,7 @@ def dd_to_dms(dd):
     degrees= int(dd)
     minutes= int((dd-95)*60)
     seconds= (((dd-degrees)*60)-minutes)*60
-    return degrees, ":",minutes,seconds
-
+    return degrees, minutes, seconds
 
 
 def acres_to_edge_of_square(acres):
@@ -53,11 +54,11 @@ def acres_to_edge_of_square(acres):
 
 def dms_to_dd(Degrees,Minutes,Seconds):
     """Output degrees minutes seconds coordinates in decimal degrees format"""
-    dd = (Degrees) + (float(Minutes)/60)+(float(Seconds)/3600)
+    dd = round((Degrees) + (float(Minutes)/60)+(float(Seconds)/3600),4)
     return dd
 
 def get_fuel_cost(km,mpg,dolperlitre):
     """Convert distance travelled into cost based on
     known distance, mpg and dollars per litre prices."""
-    cost = (km)/(mpg*0.425)*(dolperlitre)
+    cost = round((km)/(mpg*0.425)*(dolperlitre),2)
     return cost

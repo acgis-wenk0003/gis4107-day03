@@ -1,6 +1,7 @@
 
 import Converter
 reload(Converter)
+
 #test miles to kilometres
 
 def test_miles_to_km():
@@ -31,10 +32,12 @@ def test_get_bear_count():
 def test_dms_to_dd():
     test_dd = Converter.dms_to_dd(95,25,05)
     print "95:25:05 =", test_dd,"decimal degrees."
+
 #test convert Decimal Degrees to Degrees Minutes Seconds
 def test_dd_to_dms():
-    test_dd_to_dms= Converter.dd_to_dms(95.41805)
-    print test_dd_to_dms
+    test_degrees, test_minutes, test_seconds= Converter.dd_to_dms(95.41805)
+    print test_degrees, ":", test_minutes, ":", test_seconds
+
 #Calculate fuel cost with known distance, mpg and dollars per litre price.
 def test_get_fuel_cost():
     test_fuel_cost = Converter.get_fuel_cost(100,35,1.3)
